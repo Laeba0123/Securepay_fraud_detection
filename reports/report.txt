@@ -1,0 +1,63 @@
+📓 🔥 FINAL PERFORMANCE ANALYSIS REPORT
+
+🧠 1. INTRODUCTION
+
+Fraud detection in financial systems is challenging due to extreme class imbalance, where fraudulent transactions account for less than 1% of all data. This project uses unsupervised learning techniques to detect anomalies without relying on labeled fraud data.
+
+⚙️ 2. MODELS USED
+Isolation Forest
+Tree-based anomaly detection
+Efficient for large datasets
+Detects anomalies based on isolation depth
+Local Outlier Factor (LOF)
+Density-based approach
+Detects anomalies in sparse regions
+Computationally expensive
+
+📊 3. MODEL COMPARISON
+Metric	Isolation Forest	LOF
+Precision	~40%	Lower
+Recall	~47–60%	Lower
+Stability	High	Low
+Scalability	High	Poor
+
+📈 4. CONFUSION MATRIX INSIGHTS
+Majority of normal transactions correctly classified
+Low false positives → good user experience
+Some fraud missed → improvement possible
+
+🎯 5. THRESHOLD TUNING
+Threshold was selected using percentile-based approach:
+
+Threshold ≈ 0.49 (from tuning)
+
+Tradeoff:
+
+Scenario	Effect
+High threshold	High precision, low recall
+Low threshold	High recall, low precision
+
+
+📊 6. FINAL RESULTS
+Precision: ~40%
+Recall: ~50–60%
+F1 Score: ~0.43
+
+✅ 7. FINAL RECOMMENDATION
+
+(THIS IS YOUR MOST IMPORTANT LINE)
+
+We recommend using Isolation Forest with a contamination parameter of 0.02, achieving a Recall of approximately 50–60% and Precision around 40%, providing a balanced trade-off between fraud detection and false positives.
+
+🚀 8. BUSINESS INTERPRETATION
+Risk Level	Action
+Low	Allow
+Medium	Alert
+High	Review
+Critical	Block
+
+🔮 9. FUTURE IMPROVEMENTS
+Ensemble models (Isolation Forest + XGBoost)
+Real-time streaming pipeline
+Concept drift handling
+Continuous model retraining
