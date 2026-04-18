@@ -15,9 +15,6 @@ venv/
 data/*.csv
 data/*.zip
 
-# Model files (optional: exclude large models)
-models/*.pkl
-
 # Logs
 *.log
 
