@@ -6,8 +6,16 @@ import os
 class FraudDetector:
     def __init__(self, model_path="models/iso_model.pkl"):
         current_dir = os.path.dirname(os.path.abspath(__file__))
+        
         project_root = os.path.dirname(current_dir)
-        full_path = os.path.join(project_root, model_path) 
+        
+        full_path = os.path.join(project_root, model_path)
+        
+        print(f"Loading model from: {full_path}")
+        
+        if not os.path.exists(full_path):
+             raise FileNotFoundError(f"Model not found at {full_path}. Check your folder structure!")
+
         with open(full_path, "rb") as f:
             self.model = pickle.load(f)
     def score(self, features_list):
